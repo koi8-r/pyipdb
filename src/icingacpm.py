@@ -8,6 +8,7 @@ src = '../db/ip.xlsx'
 db, icinga = [f[name] for f in [load_workbook(src)]
                       for name in ['DB', 'Icinga']]
 
+
 def _next(sheet):
     for row in count(start=2):
         line = tuple((sheet.cell(row=row, column=c).value or '').strip().lower()
